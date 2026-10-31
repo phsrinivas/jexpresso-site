@@ -24,9 +24,19 @@
 </header>
 
 <main>
-  <img class="logo" src="https://raw.githubusercontent.com/smarras79/Jexpresso/master/assets/logo-ext2.png" alt="Jexpresso logo">
-  <p class="tagline">A CPU and GPU research code in Julia for solving systems of conservation laws
-  with continuous spectral elements and finite differences in 1D, 2D and 3D.</p>
+  <div class="hero">
+    <img src="https://raw.githubusercontent.com/smarras79/Jexpresso/master/assets/logo-ext2.png" alt="Jexpresso logo">
+    <div>
+      <h1>Jexpresso</h1>
+      <p class="tagline">A CPU and GPU research code in Julia for solving systems of conservation laws
+      with continuous spectral elements and finite differences in 1D, 2D and 3D.</p>
+      <div class="buttons">
+        <a href="install.html">Install</a>
+        <a class="plain" href="https://smarras79.github.io/Jexpresso/dev/">Documentation</a>
+        <a class="plain" href="https://github.com/smarras79/Jexpresso">Source code</a>
+      </div>
+    </div>
+  </div>
 
   <div class="intro-figures">
     <figure>
@@ -43,45 +53,48 @@
     </figure>
   </div>
 
-  <div class="buttons">
-    <a href="install.html">Install</a>
-    <a href="https://smarras79.github.io/Jexpresso/dev/">Read the documentation</a>
-    <a href="https://github.com/smarras79/Jexpresso">Source code</a>
+  <div class="columns">
+    <div>
+      <h2>Features</h2>
+      <ul>
+        <li>Continuous spectral elements of arbitrarily high order (3rd and above)</li>
+        <li>Time integration through <a href="https://docs.sciml.ai/DiffEqDocs/stable/">DifferentialEquations.jl</a></li>
+        <li>DynSGS, a residual-based, parameter-free dynamic subgrid-scale model for shock capturing and stabilization</li>
+        <li>Laguerre semi-infinite elements for outflows and absorbing layers</li>
+        <li>Curved elements and unstructured meshes</li>
+        <li>Proper Orthogonal Decomposition</li>
+        <li>Parallel runs with MPI, and VTK output</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Equations</h2>
+      <ul>
+        <li>1D wave equation</li>
+        <li>1D shallow water</li>
+        <li>2D Helmholtz</li>
+        <li>2D scalar advection-diffusion</li>
+        <li>2D Euler equations of compressible flows with gravity and passive chemicals</li>
+        <li>3D Euler equations of compressible flows with gravity</li>
+      </ul>
+      <p>The repository also has examples for magnetohydrodynamics, solid elasticity and shallow
+      water on a sphere. See the <a href="gallery.html">gallery</a>.</p>
+    </div>
   </div>
 
-  <h2>Features</h2>
-  <ul>
-    <li>Continuous spectral elements of arbitrarily high order (3rd and above)</li>
-    <li>Time integration through <a href="https://docs.sciml.ai/DiffEqDocs/stable/">DifferentialEquations.jl</a></li>
-    <li>DynSGS, a residual-based, parameter-free dynamic subgrid-scale model for shock capturing and stabilization</li>
-    <li>Laguerre semi-infinite elements for outflows and absorbing layers</li>
-    <li>Curved elements and unstructured meshes</li>
-    <li>Proper Orthogonal Decomposition</li>
-    <li>Parallel runs with MPI, and VTK output</li>
-  </ul>
-
-  <h2>Equations</h2>
-  <p>The list below is not closed: the code is built to take arbitrary systems of conservation laws.</p>
-  <ul>
-    <li>1D wave equation</li>
-    <li>1D shallow water</li>
-    <li>2D Helmholtz</li>
-    <li>2D scalar advection-diffusion</li>
-    <li>2D Euler equations of compressible flows with gravity and passive chemicals</li>
-    <li>3D Euler equations of compressible flows with gravity</li>
-  </ul>
-  <p>The repository also has examples for magnetohydrodynamics, solid elasticity and shallow
-  water on a sphere. See the <a href="gallery.html">gallery</a>.</p>
-
-  <h2>Quick start</h2>
+  <div class="columns">
+    <div>
+      <h2>Quick start</h2>
 <pre><code>using Jexpresso
 Jexpresso.run_case("CompEuler", "sod1d")</code></pre>
-  <p>This runs the 1D Sod shock tube. Follow the <a href="install.html">install steps</a> first.</p>
-
-  <h2>Contact</h2>
-  <p>Please use the <a href="https://github.com/smarras79/Jexpresso/issues">GitHub issue tracker</a>
-  for bugs and questions. If you would like to join the development team, see the
-  <a href="about.html">About</a> page.</p>
+      <p>This runs the 1D Sod shock tube. Follow the <a href="install.html">install steps</a> first.</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <p>Please use the <a href="https://github.com/smarras79/Jexpresso/issues">GitHub issue tracker</a>
+      for bugs and questions. If you would like to join the development team, see the
+      <a href="about.html">About</a> page.</p>
+    </div>
+  </div>
 </main>
 
 <footer>
