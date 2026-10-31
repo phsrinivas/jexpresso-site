@@ -41,6 +41,32 @@ document.querySelectorAll(".gallery").forEach(function (box) {
     var fig = document.createElement("figure");
     fig.innerHTML = '<a href="' + url + '"><img loading="lazy" src="' + url + '" alt="' + item[1] + '"></a>' +
                     '<figcaption>' + item[1] + '</figcaption>';
+    fig.querySelector("a").addEventListener("click", function (e) {
+      e.preventDefault();
+      showLarge(url, item[1]);
+    });
     box.appendChild(fig);
   });
+});
+
+// Show an image full size on top of the page instead of leaving the site.
+var viewer = document.createElement("div");
+viewer.id = "viewer";
+viewer.innerHTML = '<img alt=""><p></p><p class="close">Click anywhere to close</p>';
+document.body.appendChild(viewer);
+
+function showLarge(url, caption) {
+  viewer.querySelector("img").src = url;
+  viewer.querySelector("img").alt = caption;
+  viewer.querySelector("p").textContent = caption;
+  viewer.style.display = "flex";
+}
+
+function hideLarge() {
+  viewer.style.display = "none";
+}
+
+viewer.addEventListener("click", hideLarge);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") hideLarge();
 });
