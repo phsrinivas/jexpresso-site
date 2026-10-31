@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install - Jexpresso</title>
+<meta name="description" content="How to install and run Jexpresso.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="name" href="index.html">Jexpresso</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a class="here" href="install.html">Install</a>
+      <a href="https://smarras79.github.io/Jexpresso/dev/">Documentation</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/smarras79/Jexpresso">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Install</h1>
+  <p>You need Julia 1.11.9 and Git with SSH access to GitHub. These are the steps for a serial
+  install. For MPI, set it up before step 3 by following
+  <a href="https://github.com/smarras79/Jexpresso/blob/master/INSTALL.md">INSTALL.md</a>.
+  If something goes wrong, check the
+  <a href="https://github.com/smarras79/Jexpresso/blob/master/FAQ.md">FAQ</a>.</p>
+
+  <h3>1. Clone the code and the sample meshes</h3>
+<pre><code>git clone git@github.com:smarras79/Jexpresso.git
+git clone git@github.com:smarras79/JexpressoMeshes.git</code></pre>
+
+  <h3>2. Link the meshes</h3>
+<pre><code>cd Jexpresso
+ln -s ../JexpressoMeshes/meshes .</code></pre>
+
+  <h3>3. Instantiate and precompile</h3>
+  <p>The first precompile takes a while.</p>
+<pre><code>julia --project=. -e 'ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0; using Pkg; Pkg.instantiate()'
+julia --project=. -e 'using Pkg; Pkg.precompile()'</code></pre>
+
+  <h3>4. Run a test case</h3>
+  <p>Start Julia with <code>julia --project=.</code> and run:</p>
+<pre><code>using Jexpresso
+Jexpresso.run_case("CompEuler", "sod1d")</code></pre>
+
+  <h2>Running in parallel</h2>
+  <p>Once MPI is set up, a case can be launched from the command line, for example on 10 ranks:</p>
+<pre><code>mpiexec -n 10 julia --project=. src/Jexpresso.jl MHD fluxEmergenceSon2025</code></pre>
+
+  <h2>Next steps</h2>
+  <ul>
+    <li><a href="https://smarras79.github.io/Jexpresso/dev/tutorials/running-jexpresso/">Running Jexpresso</a></li>
+    <li><a href="https://smarras79.github.io/Jexpresso/dev/tutorials/newcase/">Setting up a new case</a></li>
+    <li><a href="https://smarras79.github.io/Jexpresso/dev/tutorials/user_inputs/">User inputs</a></li>
+  </ul>
+</main>
+
+<footer>
+  <p>Jexpresso is released under the <a href="https://github.com/smarras79/Jexpresso/blob/master/LICENSE.md">Apache License 2.0</a>.
+  Developed by the <a href="https://smarras79.github.io">Computational Fluid Dynamics and Natural Hazards Lab</a> at NJIT and collaborators.</p>
+</footer>
+
+</body>
+</html>
