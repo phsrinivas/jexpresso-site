@@ -237,3 +237,5 @@ footer p {
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .gallery img { height: 130px; }
 }
+
+.section-note { margin: -4px 0 14px; color: #5c6370; font-size: 15px; }
