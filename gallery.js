@@ -6,7 +6,7 @@ var images = {
   atmosphere: [
     ["vorticity-grey-scale.gif", "Planet Saturn"],
     ["bomex.png", "Shallow cumuli with BOMEX conditions"],
-    ["barbados.jpg", "Real shallow cumulus clouds near Barbados, the type simulated in BOMEX (photo: P. Blossey, U. Washington)"],
+    ["barbados.jpg", "Left: real shallow cumulus clouds near Barbados (photo: P. Blossey, U. Washington). Right: the same kind of clouds simulated with BOMEX conditions."],
     ["dc.png", "Density current"],
     ["SWsphere-Galewki-visc1e5-36x36.jpg", "Shallow water on a spherical shell"],
     ["thetaTracersMeshUnstr.png", "2D Euler equations with buoyancy and two passive tracers"],
