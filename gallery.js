@@ -6,6 +6,8 @@ var images = {
   atmosphere: [
     ["vorticity-grey-scale.gif", "Planet Saturn"],
     ["bomex.png", "Shallow cumuli with BOMEX conditions"],
+    ["barbados.jpg", "Real shallow cumulus clouds near Barbados, the type simulated in BOMEX (photo: P. Blossey, U. Washington)"],
+    ["dc.png", "Density current"],
     ["SWsphere-Galewki-visc1e5-36x36.jpg", "Shallow water on a spherical shell"],
     ["thetaTracersMeshUnstr.png", "2D Euler equations with buoyancy and two passive tracers"],
     ["rtb3d.png", "3D Euler equations with buoyancy"],
@@ -18,7 +20,8 @@ var images = {
     ["1dacoustic.png", "1D acoustic wave"],
     ["shock-MrhoSchielern.jpg", "Flow at Mach 3 with forward-facing step"],
     ["NACA64A210-TWOFIGS.png", "Flow at Mach 3 with airfoil"],
-    ["KH-EC-SGSsmag.jpg", "Kelvin-Helmholtz instability"]
+    ["KH-EC-SGSsmag.jpg", "Kelvin-Helmholtz instability"],
+    ["ffs_shocks.jpg", "Mach 3 flow over a forward-facing step: Mach number, DynSGS viscosity and pressure"]
   ],
   mhd: [
     ["MHD_By.png", "Magnetized Kelvin-Helmholtz instability"],
@@ -29,6 +32,9 @@ var images = {
     ["Wave_Train_final.png", "1D wave train for linearized shallow water equations"],
     ["ad2d-4s-line.png", "2D advection-diffusion equation"],
     ["Helmholtz_from_jexpresso-line.png", "2D Helmholtz equation"]
+  ],
+  amr: [
+    ["AMR-rtb.png", "Rising thermal bubble with adaptive mesh refinement. Left: the refined mesh follows the bubble."]
   ],
   solid: [
     ["beam2d.jpeg", "Solid elasticity"]
